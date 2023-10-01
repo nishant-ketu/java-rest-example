@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Check out code from a Git repository
-                echo 'https://github.com/your-username/your-repo.git'
+                echo 'https://github.com/your-username/java-rest-example.git'
             }
         }
         stage('Build') {
