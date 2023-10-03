@@ -1,10 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+        stage('Git Tag') {
             steps {
                 // Check out code from a Git repository
-                echo 'https://github.com/your-username/your-repo.git'
+                sh "git rev-parse HEAD"
             }
         }
         stage('Build') {
