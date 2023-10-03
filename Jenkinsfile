@@ -1,10 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+        stage('Git Tag') {
             steps {
                 // Check out code from a Git repository
-                echo 'https://github.com/your-username/java-rest-example.git'
+                def version
+                version=script.sh(returnStdout: true, script: "git rev-parse --short HEAD").trim()
+                echo "$version"
             }
         }
         stage('Build') {
