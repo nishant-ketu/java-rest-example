@@ -4,7 +4,7 @@ pipeline {
         stage('Git Tag') {
             steps {
                 // Check out code from a Git repository
-                sh "git describe --tags --always"
+                sh "git rev-parse HEAD"
             }
         }
         stage('Build') {
