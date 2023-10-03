@@ -4,9 +4,7 @@ pipeline {
         stage('Git Tag') {
             steps {
                 // Check out code from a Git repository
-                def version
-                version=script.sh(returnStdout: true, script: "git rev-parse --short HEAD").trim()
-                echo "$version"
+                git rev-parse --short HEAD
             }
         }
         stage('Build') {
